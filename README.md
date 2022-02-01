@@ -16,7 +16,7 @@ User-Locations are logged and printed out in console and are saved in ```user.tx
 <br/>
 Runs Flask server.
 <br/>
-Go to 127.0.0.1 on your browser
+Go to `127.0.0.1:5000` on your browser
 <br/>
 The webpage will be displayed
 <br/>
