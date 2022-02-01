@@ -2,11 +2,10 @@
 
 ### Track Locations
 This site tracks location and redirects to google.com
-
 # How to install
-`git clone `
+https://github.com/1blackghost/NAB-Location-Tracker.git Clones the directory and files.
 <br/>
-Clones the directory and files.
+
 `cd NAB-Location-Tracker`
 # How to run:
 ```python3 app.py```
@@ -17,12 +16,16 @@ User-Locations are logged and printed out in console and are saved in ```user.tx
 <br/>
 Runs Flask server.
 <br/>
+
 Go to 127.0.0.1 on your browser
 <br/>
+
 The webpage will be displayed
 <br/>
+
 Use ngork/pythonanywhere server for deployment.
 <br/>
+
 
 # For-Live-View:
 [CLICK_HERE](https://instagramcomgiveaways.pythonanywhere.com/)
